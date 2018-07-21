@@ -60,7 +60,7 @@ app.use( function(req, res, next) {
 
  */
 
-
+const pokemon = require('./components/pokemon/pokemon.route');
 
 
 /**
@@ -68,6 +68,7 @@ app.use( function(req, res, next) {
  */
 
 //app.use('/api', usuarios); **Ejemplo**
+app.use('/api', pokemons);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;

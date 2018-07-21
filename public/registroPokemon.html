@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Juego de Pokémon</title>
-    <link rel="stylesheet" href="css/styleGeneral.css">
-    <link rel="stylesheet" href="css/styleRegistros.css">
+    <!-- <link rel="stylesheet" href="css/styleGeneral.css">
+    <link rel="stylesheet" href="css/styleRegistros.css"> -->
 </head>
 <body>
     <header>
@@ -23,10 +23,12 @@
                 <input type="text" id="nomPokemon" placeholder="ejm:Pikachu" required> <!-- no caracteres especiales -->
 
                 <label for="">Subir foto del pokémon</label>
-                <button type="button">Subir foto de pokémon</button>
+                <button type="button" id='file-upload' class="btnFoto">Subir foto de pokémon</button>
+
+                <img src="" alt="foto" class="fotoContainer" id="pokefoto">
 
                 <label for="tipoUno">Tipo 1</label>
-                <select name="tipo" id="tipo1">
+                <select name="tipo" id="tipo1" required>
                     <option value="">-- Seleccione un tipo de pokémon--</option>
                 </select>
 
@@ -46,10 +48,13 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
     <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="js/servicioImagen.js"></script>
 
     <script src="js/pokemon/controladorRegistroPokemon.js"></script>
     <script src="js/pokemon/servicioPokemon.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
 
 </body>
 </html>
