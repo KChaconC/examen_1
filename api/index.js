@@ -11,7 +11,7 @@ const express = require('express'),
  */
 let db = mongoose.connection,
 
-    dburl = 'mongodb://examen_1:examen1Kath@ds159400.mlab.com:59400/examen_1',
+    dburl = 'mongodb://examen1:examen1Kath@ds159400.mlab.com:59400/examen_1',
 
 
     port = 4000;
@@ -68,7 +68,7 @@ const pokemon = require('./components/pokemon/pokemon.route');
  */
 
 //app.use('/api', usuarios); **Ejemplo**
-app.use('/api', pokemons);
+app.use('/api', pokemon);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;

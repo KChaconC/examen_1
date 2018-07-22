@@ -19,7 +19,7 @@ $(function() {
             console.log(id);
             imagenUrl = 'https://res.cloudinary.com/drbzc9dz2/image/upload/' + id;
             console.log(imagenUrl);
-            document.querySelector('#file-upload').src = imagenUrl;
+            document.querySelector('#pokefoto').src = imagenUrl;
             // cambiarFoto(imagenUrl);
             return imagenUrl;
         });

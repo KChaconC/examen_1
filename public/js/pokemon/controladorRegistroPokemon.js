@@ -1,15 +1,16 @@
-
 'use strict';
-validarCamposrequeridos();
+
 
 let btnRegistrarPokemon = document.querySelector('#btnRegistrar');
 btnRegistrarPokemon.addEventListener('click', obtenerPokeDatos);
 
 let iptnumPokedex = document.querySelector('#numPoke');
+console.log(iptnumPokedex);
 let iptnombrePokemon = document.querySelector('#nomPokemon');
 let ipttipo1 = document.querySelector('#tipo1');
 let ipttipo2 = document.querySelector('#tipo2');
 let foto = document.querySelector('#file-upload');
+llenarSelect();
 
 
 function obtenerPokeDatos(){
@@ -26,7 +27,7 @@ function obtenerPokeDatos(){
 
     pokemon.push(numPokedex, nomPokemon, tipo_1, tipo_2, foto);
 
-    if(error == true) {
+    if(error) {
         swal({
             title: "Registro fallido",
             text: "El pokémon no se pudo registrar",
@@ -34,58 +35,58 @@ function obtenerPokeDatos(){
             button: "Ok",
         });
     } else {
-        btnRegistrarPokemon(numPokedex, nomPokemon, tipo_1, tipo_2, foto);
+        registrarPokemon(pokemon);
         swal({
             title: "Registro exitoso",
             text: "El pokémon se ha registrado correctamente",
             icon: "success",
             button: "Ok",
         });
-        window.location(href = './listarPokemons.html');
+        window.location('./listaPokemons.html');
         limpiarForm();
     }
     
 };
 
 function validarCamposrequeridos(){
-    let error = false;
+    let error = true;
 
      let regExNumber = /[0-9]+/;
      let patron = /[A-Za-z0-9]+/;
 
-     let requeridos = document.querySelectorAll('[required]');
-     let vacio = false;
-     for(let i = 0; i<requeridos.length; i++){
-         if(requeridos[i].value == ''){
-            requeridos[i].classList.add('error');
-            vacio = true;
-         }else{
-             requeridos[i].classList.remove('error');
-         }
-     }
-     return vacio;
-}
-
-if(validarCamposrequeridos()){
-    swal({
-        title: "Advertencia",
-        text: "Por favor llene los campos vacíos.",
-        icon: "warning",
-        button: "Ok",
-    });
-} else {
-    if(regExNumber.test(numPokedex)) {
-        document.querySelector('#numPoke').classList.add('error');
+    if(iptnumPokedex.value == '' || !regExNumber.test(iptnumPokedex.value)) {
+        iptnumPokedex.classList.add('error');
     }else {
-        document.querySelector('#numPoke').classList.remove('error');
+        iptnumPokedex.classList.remove('error');
+        error = false;
     }
 
-    if(patron.test(nomPokemon)){
-        document.querySelector('#nomPokemon').classList.add('error');
+    if(iptnombrePokemon.value == '' || !patron.test(iptnombrePokemon.value)){
+        iptnombrePokemon.classList.add('error');
     }else{
-        document.querySelector('#nomPokemon').classList.remove('error');
+        iptnombrePokemon.classList.remove('error');
+        error = false;
     }
+
+    if(ipttipo1.value == ''){
+       ipttipo1.classList.add('error');
+    }else{
+        ipttipo1.classList.remove('error');
+        error = false;
+    }
+
+    if(ipttipo2.value == ipttipo1.value){
+        console.log("el tipo no puede ser igual al tipo 1, favor elegir otro");
+        ipttipo2.classList.add('error');
+    }
+    else{
+        ipttipo2.classList.remove('error');
+        error = false;
+    }
+    return error;
 }
+
+
 
 function limpiarForm() {
     iptnumPokedex.value = '';
@@ -93,4 +94,28 @@ function limpiarForm() {
     ipttipo1.value = '';
     ipttipo2.value = '';
     foto.value = '';
+}
+
+function llenarSelect(){
+    let tipos = ['Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fighting', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water'];
+
+    let slttipo = document.querySelector('#tipo1');
+    let sltTipo2 = document.querySelector('#tipo2');   
+
+    for(let i = 0; i < tipos.length; i++){
+        slttipo.options[i+1] = new Option (tipos[i]);
+        sltTipo2.options[i+1] = new Option (tipos[i]);
+    }    
+}
+
+function tonta(){
+    let cualquiera = listarPokemon();
+
+    for(let i = 0; i< cualquiera.length; i++){
+        if(cualquiera[i].numPokedex == iptnumPokedex.value){
+            iptnumPokedex.classList.add('span');
+        }else{
+            iptnumPokedex.classList.remove('span');
+        }
+    }
 }

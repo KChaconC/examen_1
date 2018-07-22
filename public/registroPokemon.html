@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Juego de Pokémon</title>
-    <!-- <link rel="stylesheet" href="css/styleGeneral.css">
-    <link rel="stylesheet" href="css/styleRegistros.css"> -->
+    <link rel="stylesheet" href="css/styleGeneral.css">
+    <!-- <link rel="stylesheet" href="css/styleRegistros.css"> -->
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
             <form action="" id="frmRegPoke">
                 
                 <label for="numeropokemon">Número de pokédex</label>
-                <input type="number" id="numPoke" placeholder="11222333" required> <!-- debe ser único -->
+                <input type="text" id="numPoke" placeholder="11222333" required> <!-- debe ser único -->
 
                 <label for="pokemon">Pokémon</label>
                 <input type="text" id="nomPokemon" placeholder="ejm:Pikachu" required> <!-- no caracteres especiales -->
@@ -25,7 +25,7 @@
                 <label for="">Subir foto del pokémon</label>
                 <button type="button" id='file-upload' class="btnFoto">Subir foto de pokémon</button>
 
-                <img src="" alt="foto" class="fotoContainer" id="pokefoto">
+                <img src="imgs/pokeball.png" alt="pokebola" class="fotoContainer" id="pokefoto" width="10%" height="125px">
 
                 <label for="tipoUno">Tipo 1</label>
                 <select name="tipo" id="tipo1" required>
