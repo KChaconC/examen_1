@@ -35,15 +35,14 @@ function registrarEntrenador(){
         });
     } else {
         registroEntrenador(entrenadores);
-       
+        limpiarForm();
         swal({
             title: "Registro exitoso",
             text: "El entrenador se ha registrado correctamente",
             icon: "success",
             button: "Ok",
         });
-       
-        limpiarForm();
+        
     }
 }
 
@@ -90,9 +89,9 @@ function validar(){
 
 
 function limpiarForm(){
-    inptNumEntrenador = '';
-inptNombre = '';
-inptEdad = '';
-sltSexo = '';
-inptfoto = '';
+inptNumEntrenador.value = '';
+inptNombre.value = '';
+inptEdad.value = '';
+sltSexo.value = '';
+inptfoto.value = '';
 }

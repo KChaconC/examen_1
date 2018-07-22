@@ -3,18 +3,27 @@
 
 listarEntrenadores();
 
+const inptFiltro = document.querySelector('#buscarE');
 
-function listarEntrenadores() {
-   
+inptFiltro.addEventListener('keyup', function () {
+    listarEntrenadores(inptFiltro.value);
+});
+
+
+function listarEntrenadores(inptFiltro) {
+
     let entrenadores = obtenerListaEntrenadores();
 
     let tbody = document.querySelector('#tblEntrenadores tbody');
+
+    if (!inptFiltro) {
+        inptFiltro = ''
+    }
+
     tbody.innerHTML = '';
 
-
-    
     for (let i = 0; i < entrenadores.length; i++) {
-
+        if (entrenadores[i]['nombre_entrenador'].toLowerCase().includes(inptFiltro.toLowerCase())) {
             let fila = tbody.insertRow();
 
             let foto = fila.insertCell();
@@ -30,13 +39,10 @@ function listarEntrenadores() {
             foto.appendChild(img);
 
             numEntrenador.innerHTML = entrenadores[i]['numero_entrenador'];
-            entrenadores.innerHTML = entrenadores[i]['nombre_entrenador'];
+            nombre.innerHTML = entrenadores[i]['nombre_entrenador'];
             edad.innerHTML = entrenadores[i]['edad'];
             sexo.innerHTML = entrenadores[i]['sexo'];
-
-            tipos.innerHTML = pokemons[i]['tipo_1'] + ' ' + pokemons[i]['tipo_2'];
-        
-        
+        }
     }
 }
 

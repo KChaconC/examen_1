@@ -10,10 +10,10 @@ for (let i = 0; i < tipos.length; i++) {
 
 let btnFiltro = document.querySelector("#bntFiltro");
 let inpFiltro = document.querySelector('#buscarPokemon');
-listarPokemons(inpFiltro.value, slttipos.innerText);
+listarPokemons(inpFiltro.value, slttipos.value);
 
 btnFiltro.addEventListener('click', function () {
-    listarPokemons(inpFiltro.value, slttipos.innerHTML);
+    listarPokemons(inpFiltro.value, slttipos.value);
 });
 
 console.log(slttipos);
@@ -23,10 +23,10 @@ function listarPokemons(inpFiltro, slttipos) {
 
     let tbody = document.querySelector('#tblPokemon tbody');
     tbody.innerHTML = '';
-
+    console.log(slttipos);
     for (let i = 0; i < pokemons.length; i++) {
-            if (pokemons[i]['nombre_pokemon'].toLowerCase().includes(inpFiltro.toLowerCase())|| pokemons[i]['tipo_1'].toLowerCase().includes(slttipos.toLowerCase())){    
-            
+            if (pokemons[i]['nombre_pokemon'].toLowerCase().includes(inpFiltro.toLowerCase()) && pokemons[i]['tipo_1'].toLowerCase().includes(slttipos.toLowerCase())){    
+            console.log(pokemons[i]['tipo_1']);
 
             let fila = tbody.insertRow();
 

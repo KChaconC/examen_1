@@ -3,7 +3,7 @@
 function registroEntrenador(entrenadores){
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/registrar_profesor',
+        url : 'http://localhost:4000/api/registrar_entrenador',
         type : 'post',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
@@ -45,13 +45,14 @@ function obtenerListaEntrenadores(){
     
       peticion.done(function(response){
        respuesta = response;
+       console.log(response);
       });
-    
+     
       peticion.fail(function(response){
-       
+        console.log(response);
       });
 
       return respuesta;
-    
+    console.log(response);
     return listaEntrenadores;
 }
