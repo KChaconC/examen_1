@@ -23,22 +23,23 @@
                 <input type="text" name="nombre" id="nombre">
 
                 <label for="edad">Edad</label>
-                <input type="text" name="edad" id="edad">
+                <input type="text" name="edad" id="edad" max="80" min="15">
 
-                <label for="sexo">Sexo</label>
-                <input type="checkbox" class="sexo" name="femenino" id="femenino" value="F">
-                <label for="femenino">Femenino</label>
-                <input type="checkbox" class="sexo" name="masculino" id="masculino" value="M">
-                <label for="masculino">Masculino</label>
-                <input type="checkbox" class="sexo" name="indefinido" id="indefinido" value="I">
-                <label for="indefinido">Indefinido</label>
+                <label for="sexo">Género</label>
+                <select name="" id="sltSexo">
+                    <option value="">Seleccione el género</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Indefinido">Indefinido</option>
+                    <option value="Otro">Otro</option>
+                </select>                
 
                 <label for="">Subir foto</label>
                 <button type="button" id='file-upload' class="btn Foto">Subir foto</button>
 
                 <img src="imgs/entrenador.png" alt="entrenador" class="fotoContainer" id="pokefoto" width="10%" height="125px">
 
-                <button type="button" class="btn" id="btnRegistro"></button>
+                <button type="button" class="btn" id="btnRegistro">Registrar</button>
             </form>
         </section>
     </main>
@@ -51,6 +52,6 @@
     <script src="js/servicioImagen.js"></script>
 
     <script src="js/entrenador/controladorRegistroEntrenador.js"></script>
-    <script src="js/entrenador/servicioPokemon.js"></script>
+    <script src="js/entrenador/servicioEntrenador.js"></script>
 </body>
 </html>

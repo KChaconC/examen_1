@@ -24,11 +24,8 @@ function listarPokemons(inpFiltro, slttipos) {
     let tbody = document.querySelector('#tblPokemon tbody');
     tbody.innerHTML = '';
 
-
-    
     for (let i = 0; i < pokemons.length; i++) {
-            if (pokemons[i]['nombre_pokemon'].toLowerCase().includes(inpFiltro)) {
-                if ( pokemons[i]['tipo_1'].toLowerCase().includes(slttipos)){    
+            if (pokemons[i]['nombre_pokemon'].toLowerCase().includes(inpFiltro.toLowerCase())|| pokemons[i]['tipo_1'].toLowerCase().includes(slttipos.toLowerCase())){    
             
 
             let fila = tbody.insertRow();
@@ -48,7 +45,7 @@ function listarPokemons(inpFiltro, slttipos) {
             pokemon.innerHTML = pokemons[i]['nombre_pokemon'];
 
             tipos.innerHTML = pokemons[i]['tipo_1'] + ' ' + pokemons[i]['tipo_2'];
-        }
+        
         }
     }
 }
