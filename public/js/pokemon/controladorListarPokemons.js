@@ -13,33 +13,23 @@ let inpFiltro = document.querySelector('#buscarPokemon');
 listarPokemons(inpFiltro.value, slttipos.innerText);
 
 btnFiltro.addEventListener('click', function () {
-    listarPokemons(inpFiltro.value, slttipos.innerText);
+    listarPokemons(inpFiltro.value, slttipos.innerHTML);
 });
 
-
+console.log(slttipos);
 function listarPokemons(inpFiltro, slttipos) {
    
     let pokemons = listaPokemons();
-    let pokeFiltro = [];
 
     let tbody = document.querySelector('#tblPokemon tbody');
     tbody.innerHTML = '';
 
-    if(inpFiltro == ''){
-        pokeFiltro = pokemons;
-    }else{
-        for(let i = 0; i < pokemons.length; i++){
-        if (pokemons[i]['nombre_pokemon'].toLowerCase().includes(inpFiltro)) {
-             pokeFiltro = pokemons[i];   
-        }
-    }
-    }
 
     
     for (let i = 0; i < pokemons.length; i++) {
-            // if (pokemons[i]['nombre_pokemon'].toLowerCase().includes(inpFiltro) && pokemons[i]['tipo_1'].toLowerCase().includes(slttipos)) {
-            //      pokeFiltro = pokemons[i];   
-            // }
+            if (pokemons[i]['nombre_pokemon'].toLowerCase().includes(inpFiltro)) {
+                if ( pokemons[i]['tipo_1'].toLowerCase().includes(slttipos)){    
+            
 
             let fila = tbody.insertRow();
 
@@ -58,7 +48,8 @@ function listarPokemons(inpFiltro, slttipos) {
             pokemon.innerHTML = pokemons[i]['nombre_pokemon'];
 
             tipos.innerHTML = pokemons[i]['tipo_1'] + ' ' + pokemons[i]['tipo_2'];
-        
+        }
+        }
     }
 }
 
