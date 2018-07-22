@@ -1,3 +1,8 @@
+* {
+    font-family: 'Quicksand', Helvetica, sans-serif;
+    /* color: #6c7073 ; */
+}
+
 .error {
     border: 2px tomato solid;
 }
@@ -7,94 +12,7 @@
     color: tomato;
 }
 
-.bug {
-    background-image: url();
+.imagenTipo {
     width: 150px;
     height: 200px;
-}
-.dark {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.dragon {
- background-image: url();
- width: 150px;
-    height: 200px;
-}
-.electric {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.fairy {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.fighting {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.fire {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.fliying {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.ghost {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.grass {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.ground {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.ice {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.normal {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.poison {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.psychic {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.rock {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-}
-.steel {
-    background-image: url('../imgs/steel.jpg');
-    width: 150px;
-    height: 200px;
-}
-.water {
-    background-image: url();
-    width: 150px;
-    height: 200px;
-    
 }

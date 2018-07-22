@@ -98,7 +98,7 @@ function limpiarForm() {
 
 function llenarSelect(){
     let tipos = ['Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fighting', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water'];
-
+   
     let slttipo = document.querySelector('#tipo1');
     let sltTipo2 = document.querySelector('#tipo2');   
 
@@ -108,11 +108,11 @@ function llenarSelect(){
     }    
 }
 
-function tonta(){
-    let cualquiera = listarPokemon();
+function validarNumPokedex(){
+    let pokemons = listarPokemon();
 
-    for(let i = 0; i< cualquiera.length; i++){
-        if(cualquiera[i].numPokedex == iptnumPokedex.value){
+    for(let i = 0; i< pokemons.length; i++){
+        if(pokemons[i].numPokedex == iptnumPokedex.value){
             iptnumPokedex.classList.add('span');
         }else{
             iptnumPokedex.classList.remove('span');
