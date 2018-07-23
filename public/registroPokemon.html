@@ -1,46 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Juego de Pokémon</title>
     <link rel="shortcut icon" type="image/x-icon" href="imgs/pokeballIcon.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styleGeneral.css">
-    <!-- <link rel="stylesheet" href="css/styleRegistros.css"> -->
+    <link rel="stylesheet" href="css/styleRegistro.css">
 </head>
+
 <body>
     <header>
-        <nav></nav>
+        <nav>
+            <a href="index.html"><img src="imgs/pokeball.png" alt="Pokebola" class="pokeIn"></a>
+            <a href="registroPokemon.html">Registro de pokemons</a>
+            <a href="listaPokemons.html">Pokemons</a>
+            <a href="registroEntrenador.html">Registro de entrenadores</a>
+            <a href="listaEntrenadores.html">Entrenadores</a>
+        </nav>
     </header>
     <main>
         <section id="registro">
             <form action="" id="frmRegPoke">
-                
-                <label for="numeropokemon">Número de pokédex</label>
-                <input type="text" id="numPoke" placeholder="11222333" required> <!-- debe ser único -->
+                <div class="inptsLeft">
+                    <div class="ipt1">
+                        <label for="numeropokemon">Número de pokédex</label>
+                        <br>
+                        <input type="text" id="numPoke" placeholder="11222333" required>
+                        <!-- debe ser único -->
+                    </div>
+                </div>
+                <div class="ip2">
+                    <label for="pokemon">Pokémon</label>
+                    <br>
+                    <input type="text" id="nomPokemon" placeholder="ejm:Pikachu" required>
+                    <!-- no caracteres especiales -->
+                </div>
 
-                <label for="pokemon">Pokémon</label>
-                <input type="text" id="nomPokemon" placeholder="ejm:Pikachu" required> <!-- no caracteres especiales -->
+                <div class="inptsRigth cajaImg">
 
-                <label for="">Subir foto del pokémon</label>
-                <button type="button" id='file-upload' class="btn Foto">Subir foto de pokémon</button>
+                    <label for="">Subir foto del pokémon</label>
+                    <button type="button" id='file-upload' class="btn Foto">Subir imagen</button>
+                    <div class="contImg">
+                        <img src="imgs/pokeball.png" alt="pokebola" class="fotoContainer" id="pokefoto" width="10%" height="125px">
+                    </div>
+                </div>
 
-                <img src="imgs/pokeball.png" alt="pokebola" class="fotoContainer" id="pokefoto" width="10%" height="125px">
+                <div class="selects">
+                    <label for="tipoUno">Tipo 1</label>
+                    <select name="tipo" id="tipo1" required>
+                        <option value="">-- Seleccione un tipo de pokémon--</option>
+                    </select>
 
-                <label for="tipoUno">Tipo 1</label>
-                <select name="tipo" id="tipo1" required>
-                    <option value="">-- Seleccione un tipo de pokémon--</option>
-                </select>
-
-                <label for="tipoDos">Tipo 2</label>
-                <select name="tipo2" id="tipo2">
-                    <option value="">--Seleccione el tipo de pokémon--</option>
-                </select>
-                <span>*opcional</span>
-
-                <button type="button" id="btnRegistrar" class="btn">Registrar</button>
+                    <label for="tipoDos">Tipo 2</label>
+                    <select name="tipo2" id="tipo2">
+                        <option value="">--Seleccione el tipo de pokémon--</option>
+                    </select>
+                    <span>*opcional</span>
+                </div>
+                <div class="btnBox">
+                    <button type="button" id="btnRegistrar" class="btn">Registrar</button>
+                </div>
             </form>
         </section>
     </main>
@@ -56,7 +82,8 @@
 
     <script src="js/pokemon/controladorRegistroPokemon.js"></script>
     <script src="js/pokemon/servicioPokemon.js"></script>
-    
+
 
 </body>
+
 </html>

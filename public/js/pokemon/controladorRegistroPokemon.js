@@ -58,6 +58,7 @@ function validarCamposrequeridos(){
         iptnumPokedex.classList.add('error');
     }else {
         iptnumPokedex.classList.remove('error');
+
         error = false;
     }
 

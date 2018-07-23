@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Juego de Pkémon</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/pokeballIcon.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styleGeneral.css">
 </head>
+
 <body>
     <header>
-        <nav>
+        <div class="menumini">
+            <h3>
+                <i class="fas fa-mobile-alt"></i>Descarga el app para llevar a tus pokemons a todo lado</h3>
+            <img src="" alt=""> </div>
+
+        <div class="title">
+            <h1>Juega Pokémon</h1>
+        </div>
+        <nav id="navPrimer">
             <a href="#inicio">Inicio</a>
-            <a href="#abouth">Sobre Pokemon</a>
+            <a href="#abouth">Sobre Pokémon</a>
             <a href="#info">Información</a>
-            <!-- <a href="#registro">Iniciar juego</a> -->
+            <a href="registroPokemon.html">Iniciar juego</a>
         </nav>
-        <nav>
-            <h1>Pokemon</h1>
-        </nav>
+
     </header>
     <main>
-        <section id="inicio">
+        <section id="inicio" class="imgBackground">
+            <div class="content">
+                <img src="./imgs/Pokémon_logo.png" alt="pokemon" width="35%" height="110" class="imagenLogo">
 
+                <p>Acepta el reto y probá la aplicación que te presentamos, podrás capturar tus pokémons favoritos.</p>
+            </div>
         </section>
         <section id="abouth">
-
+            <h2>Sobre Pokémon</h2>
+            <p>Pokémon es una serie de videojuegos de rol desarrollados por Game Freak y publicados para videoconsolas portátiles
+                de Nintendo.
+            </p>
+            <p>Pokémon nació originalmente con la distribución de Pokémon Verde y Pokémon Rojo en Japón, el primer videojuego
+                de la franquicia. A partir de los videojuegos surgieron las otras grandes ramas de Pokémon: anime, manga
+                y Trading Card Game. Todavía hoy, son los videojuegos los que marcan la pauta dominante, de manera que las
+                anteriores derivan su contenido de los videojuegos.</p>
         </section>
         <section id="info">
-
+            <div  class="contentImgapp">
+                <p>
+                    La app te permitirá tener un registro de los pokemons registrador
+                </p> 
+                <img src="imgs/pokemonjuego.jpg" alt="app" width="600" height="300" class="app">
+            </div>
         </section>
         <section id=""></section>
     </main>
@@ -44,4 +73,5 @@
         <div class="box"></div>
     </footer>
 </body>
+
 </html>

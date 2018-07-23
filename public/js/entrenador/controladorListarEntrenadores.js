@@ -31,13 +31,19 @@ function listarEntrenadores(inptFiltro) {
             let nombre = fila.insertCell();
             let edad = fila.insertCell();
             let sexo = fila.insertCell();
+            let captPokemon = fila.insertCell();
 
             let img = document.createElement('img');
             img.src = entrenadores[i]['foto'];
             img.classList.add('image');
-
             foto.appendChild(img);
 
+            let btn = document.createElement("input");
+            btn.classList.add('btn');
+            btn.type = "button";
+            btn.value = "Capturar Pokémon";
+
+            captPokemon.appendChild(btn);
             numEntrenador.innerHTML = entrenadores[i]['numero_entrenador'];
             nombre.innerHTML = entrenadores[i]['nombre_entrenador'];
             edad.innerHTML = entrenadores[i]['edad'];

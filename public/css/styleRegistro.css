@@ -1,5 +1,32 @@
-.span {
-    display: none;
-    font-size: 0.2em;
-    color: tomato;
+body {
+    font-family: 'Quicksand', Helvetica, sans-serif;
 }
+
+
+
+label {
+    margin: 30px 0px 0px 30px;
+}
+
+input {
+    margin: 5px 0 30px 30px;
+    border:  #939ea7  1px solid;
+    border-radius: 3px;
+    width: 50%;
+    height: 22px;
+}
+
+select {
+    border-radius: 3px;
+    width: 20%;
+    height: 22px;
+}
+
+.inptsRigth {
+    width: 85%;
+}
+
+/* 
+immagenPokebollaFoto
+float: right;
+margin: 0px 20% 100% 0px; */
